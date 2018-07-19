@@ -23,10 +23,10 @@ app.use((req, res, next) => {
 //This is the route the API will call
 app.post('/new-message', function(req, res) {
   const { message } = req.body
-  console.log(req);
+  // console.log(req);
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
-
-  if (!message || message.text.toLowerCase().indexOf('aww') < 0) {
+  var index = 'aww' || 'aaw' || ':kissing_heart:' || ':heart_eyes:' || ':heart:'
+  if (!message || message.text.toLowerCase().indexOf(index) < 0) {
     // In case a message is not present, or if our message does not have the word marco in it, do nothing and return an empty response
     return res.end()
   }
